@@ -32,6 +32,9 @@ private frmMenu vistaMenu;
 //siempre poner todos los botones que vamos a ocupar
 vistaQuePido.btnAgregar.addMouseListener(this);
 vistaQuePido.jtbMenu.addMouseListener(this);
+vistaQuePido.btnEliminar.addMouseListener(this);
+vistaQuePido.btnActualizar.addMouseListener(this);
+
 
 
 ModeloMenu.Mostrar(vistaQuePido.jtbMenu);
@@ -63,6 +66,17 @@ ModeloMenu.Mostrar(vistaQuePido.jtbMenu);
         ModeloMenu.Eliminar(vistaMenu.jtbMenu);
         ModeloMenu.Mostrar(vistaMenu.jtbMenu);
         
+        }
+        
+        if(e.getSource() == vistaMenu.jtbMenu){
+        
+            ModeloMenu.setNombre(vistaMenu.txtNombre.getText());
+            ModeloMenu.setPrecio(Double.parseDouble(vistaMenu.txtPrecio.getText()));
+            ModeloMenu.setIngredientes(vistaMenu.txtIngredientes.getText());
+            
+            ModeloMenu.Actualizar(vistaMenu.jtbMenu);
+            ModeloMenu.Mostrar(vistaMenu.jtbMenu);
+
         }
         
         if(e.getSource() == vistaMenu.btnEliminar){
